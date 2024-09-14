@@ -9,13 +9,16 @@ const Favs = () => {
     resetFavorites();
   };
 
-
   return (
     <>
       <main className={theme === 'dark' ? 'dark' : 'light'}>
         <h1>Dentists Favs</h1>
-        <button onClick={handleResetFavorites} className="resetButton">Resetear Favoritos</button>
-     
+        {favorites.length > 0 && (
+          <button onClick={handleResetFavorites} className="resetButton">
+            Resetear Favoritos
+          </button>
+        )}
+
         <div className="card-grid">
           {favorites.length > 0 ? (
             favorites.map(favorite => (
